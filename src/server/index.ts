@@ -4,6 +4,7 @@ import { Server } from 'socket.io';
 import compression from 'compression';
 import { HexGrid2d } from '../client/geometry.js';
 import { Chatroom } from './messages.js';
+import { GamePiece } from '../types/schema.js';
 
 const LAG = 500;
 
@@ -20,10 +21,11 @@ jsynchronous.send = (websocket, data) => {
 }
 
 let counter = 0;
-const initialHexes = new HexGrid2d().hexesInRadius(3).map((hex) => { return { id: counter++, q: hex.q, r: hex.r, z: hex.z, type: 'tile', subtype: Math.random() > 0.5 ? 'water' : 'dirt'} });
+const initialHexes = new HexGrid2d().hexesInRadius(3).map((hex) => { return { id: counter++, q: hex.q, r: hex.r, z: hex.z, type: 'tile', subtype: Math.random() > 0.5 ? 'water' : 'dirt', spin: 0} });
 const initialCharacters = [];
 
-const $gameboard = jsynchronous({version: 32, pieces: [...initialHexes, ...initialCharacters]}, 'gameboard');
+const initialGameboard: { pieces: GamePiece[] } = {pieces: [...initialHexes, ...initialCharacters]} 
+const $gameboard = jsynchronous(initialGameboard, 'gameboard');
 const generalChat = new Chatroom('general');
 
 const $sharedState = jsynchronous({}, 'sharedState');
