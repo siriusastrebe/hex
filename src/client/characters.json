@@ -1,0 +1,34 @@
+[{
+  "name": "knight",
+  "path": "knight.glb"
+}, {
+  "name": "aerith",
+  "path": "aerith__low-poly_model.glb"
+}, {
+  "name": "cloud",
+  "path": "cloud_low-poly_model.glb"
+}, {
+  "name": "tifa",
+  "path": "tifa_-_field_model.glb"
+}, {
+  "name": "og tifa", 
+  "path": "og_tifa_with_textures.glb"
+}, {
+  "name": "jack sparrow", 
+  "path": "jack_sparrow_low_poly.glb"
+}, {
+  "name": "Ellie", 
+  "path": "low_poly_ellie.glb"
+}, {
+  "name": "mcree", 
+  "path": "low_poly_mccree.glb"
+}, {
+  "name": "steve", 
+  "path": "steve.glb"
+}, {
+  "name": "squidward", 
+  "path": "squidward_spongebob.glb"
+}, {
+  "name": "chicken", 
+  "path": "low_poly_chicken.glb"
+}]
